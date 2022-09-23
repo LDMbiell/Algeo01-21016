@@ -1,0 +1,67 @@
+# AlgeoMatrixduo
+Repository ini untuk menyelesaikan tugas besar algeo pertama tentang matrix.
+
+# Tubes-1-Algeo-2022
+
+Program ini dibuat untuk memenuhi tugas Mata Kuliah **IF 2123 Aljabar Linier dan Geometri** <br />
+
+*Program Studi Teknik Informatika* <br />
+*Sekolah Teknik Elektro dan Informatika* <br />
+*Institut Teknologi Bandung* <br />
+
+*Semester I Tahun 2022/2023*
+
+
+## Description
+
+Program ini dapat digunakan untuk melakukan beberapa hal, yaitu :
+
+1. Menghitung solusi SPL dengan metode eliminasi Gauss, metode Eliminasi Gauss-Jordan, metode matriks balikan, dan kaidah Cramer.
+2. Menyelesaikan persoalan interpolasi dan regresi linier.
+3. Menghitung matriks balikan
+4. Menghitung determinan matriks dengan metode reduksi baris dan ekspansi kofaktor.
+
+**LINK LAPORAN** <br />
+*bit.ly/BukanLaporanALGEO*
+
+### Build With
+
+- [Java](https://en.wikipedia.org/wiki/Java_(programming_language))
+
+## Getting Started
+
+### Dependecies
+
+- Java Virtual Enviroment
+- Java Development Kit
+
+### Installing
+
+- Download dan Install [Java](https://www.java.com/en/download/)
+- Download dan Install [Java Development Kit](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+- Download semua file dan folder pada repository ini
+
+### Executing program
+
+- Buka Terminal atau Command Line
+- Arahkan directory ke dalam folder yang berisi file dan folder yang sudah di download
+- Kemudian arahkan directory ke dalam folder src (Algeo01-19020\src)
+- Compile & Run program dengan command dibawah ini :
+
+```
+$ javac -d ../bin Matriks.java SPL.java Regresi.java UI.java Interpolasi.java; java -cp ../bin UI
+```
+- Run program dengan command dibawah ini :
+```
+$ java -cp ../bin UI
+```
+- Khusus OS Windows, program dapat dieksekusi dengan menjalankan file `Run Program.bat` pada folder src
+
+
+## Author
+- Laila Bilbina Khoru Nisa (13521016)
+- Bagus Lathif Firmansyah (13521017)
+
+
+
+
