@@ -22,7 +22,7 @@ Program ini dapat digunakan untuk melakukan beberapa hal, yaitu :
 4. Menghitung determinan matriks dengan metode reduksi baris dan ekspansi kofaktor.
 
 **LINK LAPORAN** <br />
-*bit.ly/BukanLaporanALGEO*
+*https://tinyurl.com/LaporanAlgeoAntiTuru*
 
 ### Build With
 
