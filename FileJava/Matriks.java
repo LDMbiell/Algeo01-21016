@@ -70,5 +70,34 @@ public class Matriks{
         this.Kolom = Kolom;
     }
 }
+  /* ********** SELEKTOR ********** */
+    public int GetFirstIdxBrs(Matriks M) {
+        return MinimalBaris;//MinimalBaris sudah didefinisikan di atas
+    }
+
+    public int GetFirstIdxKol(Matriks M) {
+        return MinimalKolom;//MinimalKolom sudah didefinisikan di atas
+    }
+
+    public int GetLastIdxBrs(Matriks M) {
+        return M.Baris - 1;//Mengambil index -1 dari Baris
+    }
+
+    public int GetLastIdxKol(Matriks M) {
+        return M.Kolom - 1;//Mengambil index -1 dari Baris
+    }
+
+    public int NbElmt(Matriks M) {
+        return (M.Baris * M.Kolom);//Mengambil total/jumlah element matriks
+    }
+  
+  /* ********** BENTUK MATRIKS ********** */
+    public static Matriks Identitas(int N) {// N adalah jumlah baris atau jumlah kolom 
+        Matriks I = new Matriks(N, N);//membuat matriks N x N dengan element 0. karena matriks identitas harus berbentuk persegi alias m=n
+        for (int i = 0; i < N; i++) //menyeleksi matriks [1][1], [2][2], [3][3], [n][n]
+            I.Mat[i][i] = 1; //mengganti element dengan angka 1
+        return I;//return matriks identitas
+    }
+  
 }
 //fungsi definisi matriks
