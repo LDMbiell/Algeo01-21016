@@ -28,6 +28,21 @@ public class Matriks{
   
   /* ********** KONSTRUKTOR ********** */
   //akan berisi beberapa fungsi dari class Matriks.
+  public Matriks(int baris, int kolom) {
+    this.Baris = baris;
+    this.Kolom = kolom;
+    this.Matrix = new double[baris][kolom];
+ }
+
+  public Matriks(double[][] Matrix) {
+    // Konstruktor dari tabel matrix i:baris, j:kolom
+    this.Baris = Matrix.length;
+    this.Kolom = Matrix[0].length;
+    this.Matrix = new double[Matrix.length][Matrix[0].length];
+    for (int i = 0; i < Matrix.length; i++)
+        for (int j = 0; j < Matrix[0].length; j++)
+            this.Matrix[i][j] = Matrix[i][j];
+}
   
 }
 //fungsi definisi matriks
