@@ -37,6 +37,38 @@ public class Matriks{
         for (int j = 0; j < Matrix[0].length; j++)
             this.Matrix[i][j] = Matrix[i][j];
 }
-  
+ 
+  public Matriks(String file_name) throws FileNotFoundException {
+    // Membaca Matriks dari sebuah file
+    ArrayList<ArrayList<Double>> Matrix = new ArrayList<ArrayList<Double>>();
+    File file = new File(file_name);
+    Scanner input = new Scanner(file);
+    int Baris = -1;
+    int Kolom = -1;
+    while (input.hasNextLine()) {
+        Baris++;
+        Matrix.add(new ArrayList<Double>());
+        String baris = input.nextLine();
+        Scanner scanBaris = new Scanner(baris);
+        while (scanBaris.hasNextDouble()) {
+            Double element = scanBaris.nextDouble();
+            Matrix.get(Baris).add(element);
+        }
+    }
+
+    if (Baris == 0) {
+        System.out.println("Tidak dapat membaca file yang dipilih");
+    } else {
+        Kolom = Matrix.get(0).size();
+        this.Matrix = new double[Matrix.size()][Matrix.get(0).size()];
+        for (int i = MinimalBaris; i <= Baris; i++) {
+            for (int j = MinimalKolom; j < Kolom; j++) {
+                this.Matrix[i][j] = Matrix.get(i).get(j);
+            }
+        }
+        this.Baris = Baris + 1;
+        this.Kolom = Kolom;
+    }
+}
 }
 //fungsi definisi matriks
