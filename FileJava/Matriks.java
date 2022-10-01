@@ -95,7 +95,7 @@ public class Matriks{
     public static Matriks Identitas(int N) {// N adalah jumlah baris atau jumlah kolom 
         Matriks I = new Matriks(N, N);//membuat matriks N x N dengan element 0. karena matriks identitas harus berbentuk persegi alias m=n
         for (int i = 0; i < N; i++) //menyeleksi matriks [1][1], [2][2], [3][3], [n][n]
-            I.Mat[i][i] = 1; //mengganti element dengan angka 1
+            I.Matrix[i][i] = 1; //mengganti element dengan angka 1
         return I;//return matriks identitas
     }
   /* ********** INPUT/OUTPUT MATRIKS ********** */
@@ -133,7 +133,7 @@ public class Matriks{
     }
 
     public void Kali(double k) {
-        this.Matrix = Kali(this, k).Mat;
+        this.Matrix = Kali(this, k).Matrix;
     }
 
     public static Matriks Kali(Matriks M, Matriks N) {
