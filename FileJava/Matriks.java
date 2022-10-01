@@ -100,7 +100,7 @@ public class Matriks{
     }
   /* ********** INPUT/OUTPUT MATRIKS ********** */
     // Baca Matriks
-    public void BacaMat() {
+    public void BacaMatriks() {
         System.out.println("Silahkan inputkan Matriks : ");
         for (int i = 0; i < this.Baris; i++) {
             for (int j = 0; j < this.Kolom; j++) {
@@ -111,7 +111,7 @@ public class Matriks{
     }
 
     // Menulis Matriks
-    public void TulisMat() {
+    public void TulisMatriks() {
         for (int i = 0; i < this.Baris; i++) {
             for (int j = 0; j < this.Kolom; j++) {
                 this.Matrix[i][j] += 0; // Agar tidak ada (-0)
@@ -314,7 +314,7 @@ public class Matriks{
         this.Matrix = M1.Matrix;
     }
 
-    public void MatCofaktor() {
+    public void MatriksCofaktor() {
         Matriks M = new Matriks(this.Kolom, this.Baris);
         for (int i = GetFirstIdxBrs(this); i <= GetLastIdxBrs(this); i++)
             for (int j = GetFirstIdxKol(this); j <= GetLastIdxKol(this); j++) {
@@ -325,7 +325,7 @@ public class Matriks{
 
     public void Adjoin() {
         if (this.NbElmt(this) != 1) {
-            this.MatCofaktor();
+            this.MatriksCofaktor();
             this.Transpose();
         } else {
             this.Matrix[0][0] = 1;
