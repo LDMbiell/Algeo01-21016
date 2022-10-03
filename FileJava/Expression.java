@@ -4,7 +4,7 @@ public class Expression {
     private static int accVarIndex = 1;
 
     public String GenerateNewVar () {
-        String var = Nilai.GetVarName(accVarIndex);
+        String var = Nilai.GetNamaVar(accVarIndex);
         exp[accVarIndex] = 1;
         accVarIndex++;
 
@@ -16,7 +16,7 @@ public class Expression {
     }
 
     public Nilai GetVariable (String var) {
-        return GetVariable(Nilai.GetVarIndex(var));
+        return GetVariable(Nilai.GetIndeksVar(var));
     }
 
     public Nilai GetVariable (int var) {
@@ -28,7 +28,7 @@ public class Expression {
     }
 
     public void SetVariable (String var, double val) {
-        SetVariable(Nilai.GetVarIndex(var), val);
+        SetVariable(Nilai.GetIndeksVar(var), val);
     }
 
     public void SetVariable (int var, double val) {
@@ -41,24 +41,24 @@ public class Expression {
             if (exp[i] != 0) {
                 if (out == "") {
                     if (exp[i] == 1) {
-                        out = Nilai.GetVarName(i);
+                        out = Nilai.GetNamaVar(i);
                     } else if (exp[i] == -1) {
-                        out = "-" + Nilai.GetVarName(i);
+                        out = "-" + Nilai.GetNamaVar(i);
                     } else {
-                        out = String.format("%.2f", exp[i]) + Nilai.GetVarName(i);
+                        out = String.format("%.2f", exp[i]) + Nilai.GetNamaVar(i);
                     }
                 } else {
                     if (exp[i] > 0) {
                         if (exp[i] != 1) {
-                            out += " + " + String.format("%.2f", exp[i]) + Nilai.GetVarName(i);
+                            out += " + " + String.format("%.2f", exp[i]) + Nilai.GetNamaVar(i);
                         } else {
-                            out += " + " + Nilai.GetVarName(i);
+                            out += " + " + Nilai.GetNamaVar(i);
                         }
                     } else {
                         if (exp[i] != -1) {
-                            out += " - " + String.format("%.2f", exp[i] * -1) + Nilai.GetVarName(i);
+                            out += " - " + String.format("%.2f", exp[i] * -1) + Nilai.GetNamaVar(i);
                         } else {
-                            out += " - " + Nilai.GetVarName(i);
+                            out += " - " + Nilai.GetNamaVar(i);
                         }
                     }
                 }
