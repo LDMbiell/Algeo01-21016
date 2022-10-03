@@ -90,7 +90,9 @@ public class Matriks{
     public int NbElmt(Matriks M) {
         return (M.Baris * M.Kolom);//Mengambil total/jumlah element matriks
     }
-  
+    
+    
+
   /* ********** BENTUK MATRIKS ********** */
     public static Matriks Identitas(int N) {// N adalah jumlah baris atau jumlah kolom 
         Matriks I = new Matriks(N, N);//membuat matriks N x N dengan element 0. karena matriks identitas harus berbentuk persegi alias m=n
