@@ -1,6 +1,0 @@
-# keteranganfolder - filejava
-Folder ini berisikan file dengan eks .java seperti main.java dan file lainnya.
-
-## Author
-- Laila Bilbina Khoru Nisa (13521016)
-- Bagus Lathif Firmansyah (13521017)
