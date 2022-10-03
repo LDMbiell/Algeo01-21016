@@ -177,20 +177,20 @@ class Menu {
             } else if (menu == 4) {
                 Matriks M = Input.InputMatriks(true);
 
-                M.TulisMat();
-                M.MatCofaktor();
+                M.TulisMatriks();
+                M.MatriksCofaktor();
                 System.out.println();
-                M.TulisMat();
+                M.TulisMatriks();
                 outputFile(M);
             } else if (menu == 5) {
                 Matriks M = Input.InputMatriks(true);
 
                 M.Adjoin();
                 System.out.println("\n[\n");
-                M.TulisMat();
+                M.TulisMatriks();
                 System.out.println("\n]\n");
             } else if (menu == 6) {
-                Interpolasi.Cari();
+                Interpolation.Cari();
             } else if (menu == 7) {
                 System.out.println("==Terima Kasih sudah menggunakan program ini==");
                 System.out.println("==========Salam Hangat dari AntiTuru==========");
