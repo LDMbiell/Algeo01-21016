@@ -42,8 +42,19 @@ Program ini dapat digunakan untuk melakukan beberapa hal, yaitu :
 - Download semua file dan folder pada repository ini
 
 ### Executing program
+- Buka Terminal atau Command Line
+- Arahkan directory ke dalam folder yang berisi file dan folder yang sudah di download
+- Kemudian arahkan directory ke dalam folder src (Algeo01-19020\src)
+- Compile & Run program dengan command dibawah ini :
 
-
+```
+$ javac -d ../bin Matriks.java SPL.java Regresi.java UI.java Interpolasi.java; java -cp ../bin UI
+```
+- Run program dengan command dibawah ini :
+```
+$ java -cp ../bin UI
+```
+- Khusus OS Windows, program dapat dieksekusi dengan menjalankan file `Run Program.bat` pada folder src
 
 ## Author
 - Laila Bilbina Khoru Nisa (13521016)
