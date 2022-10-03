@@ -1,7 +1,8 @@
 import java.util.*;
+
 class Menu {
-  //memberikan print kepada pengguna untuk memilih pilihan operasi matriks
- public static int menu() throws NoSuchElementException {
+
+    public static int menu() throws NoSuchElementException {
         Scanner s = new Scanner(System.in);
         int result = 0;
 
@@ -12,12 +13,12 @@ class Menu {
         System.out.println("1. Sistem Persamaan Linier");
         System.out.println("2. Determinan");
         System.out.println("3. Matriks Balikan");
-        System.out.println("4. Interpolasi Polinom");
-        System.out.println("5. Interpolasi Bicubic");
-        System.out.println("6. Regresi Linier Berganda");
-        System.out.println("7. Keluar\n==============");
+        System.out.println("4. Matriks Kofaktor");
+        System.out.println("5. Adjoin");
+        System.out.println("6. Interpolasi Polinom");
+        System.out.println("7. Keluar\n============================");
 
-        System.out.print("Masukan: ");
+        System.out.print("\nSilakan Masukkan Pilihan: ");
 
         result = s.nextInt();
 
@@ -25,68 +26,79 @@ class Menu {
     }
 
     public static int menuInput() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("\n1. Input dari Keyboard");
-        System.out.println("2. Input dari File\n==============");
-        System.out.print("Masukan: ");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n============================");
+        System.out.println("             Menu");
+        System.out.println("1. Input dari Keyboard");
+        System.out.println("2. Input dari File\n============================");
+        System.out.print("\nSilakan Masukkan Pilihan: ");
 
-        int result = s.nextInt();
+        int result = scan.nextInt();
 
         return result;
     }
 
     public static String inputFile() {
-        Scanner s = new Scanner(System.in);
-        System.out.print("\nMasukkan nama file(.txt): ");
+        Scanner scan = new Scanner(System.in);
+        System.out.print("\n\n============================\nMasukkan nama file(.txt): \n============================");
 
-        String result = s.nextLine();
+        String result = scan.nextLine();
 
         return result;
     }
 
     public static int spl() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("\n1. Metode Eliminasi Gauss");
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("\n\n============================");
+        System.out.println("             Menu");
+        System.out.println("1. Metode Eliminasi Gauss");
         System.out.println("2. Metode Eliminasi Gauss-Jordan");
         System.out.println("3. Metode Matriks Balikan");
-        System.out.println("4. Kaidah Cramer\n==============");
-        System.out.print("Masukan: ");
+        System.out.println("4. Kaidah Cramer\n============================");
+        System.out.print("\nSilakan Masukkan Pilihan: ");
 
-        int result = s.nextInt();
+        int result = scan.nextInt();
 
         return result;
     }
 
     public static int determinan() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("\n1. Metode Operasi Baris Elementer");
-        System.out.println("2. Metode Matriks Kofaktor\n==============");
-        System.out.print("Masukan: ");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n============================");
+        System.out.println("             Menu");
+        System.out.println("1. Metode Operasi Baris Elementer");
+        System.out.println("2. Metode Matriks Kofaktor\n============================");
+        System.out.print("\nSilakan Masukkan Pilihan: ");
 
-        int result = s.nextInt();
+        int result = scan.nextInt();
 
         return result;
     }
 
     public static int invers() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("\n1. Metode Adjoin");
-        System.out.println("2. Metode Eliminasi Gauss-Jordan\n==============");
-        System.out.print("Masukan: ");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n============================");
+        System.out.println("             Menu");
+        System.out.println("1. Metode Adjoin");
+        System.out.println("2. Metode Eliminasi Gauss-Jordan\n============================");
+        System.out.print("\nSilakan Masukkan Pilihan: ");
 
-        int result = s.nextInt();
+        int result = scan.nextInt();
 
         return result;
     }
 
     public static void outputFile(Matriks M) {
-        Scanner s = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         System.out.print("Apakah Anda ingin menyimpannya dalam file (y/n)? ");
-        char a = s.next().charAt(0);
+        char a = scan.next().charAt(0);
         if (a == 'y' || a == 'Y') {
             System.out.print("Masukan nama file (.txt): ");
-            String file = s.next();
+            String file = scan.next();
             Matriks.TulisFile(file, M);
+        }else{
+            System.out.println("==========Salam Hangat dari AntiTuru==========");
         }
     }
 
@@ -163,12 +175,25 @@ class Menu {
                     System.out.println("Perintah tidak tersedia");
                 }
             } else if (menu == 4) {
-                Interpolation.Cari();
-            } else if (menu == 5) { // bikubik
+                Matriks M = Input.InputMatriks(true);
 
-            } else if (menu == 6) { // regresi linier berganda
-                
+                M.TulisMat();
+                M.MatCofaktor();
+                System.out.println();
+                M.TulisMat();
+                outputFile(M);
+            } else if (menu == 5) {
+                Matriks M = Input.InputMatriks(true);
+
+                M.Adjoin();
+                System.out.println("\n[\n");
+                M.TulisMat();
+                System.out.println("\n]\n");
+            } else if (menu == 6) {
+                Interpolasi.Cari();
             } else if (menu == 7) {
+                System.out.println("==Terima Kasih sudah menggunakan program ini==");
+                System.out.println("==========Salam Hangat dari AntiTuru==========");
                 break;
             } else {
                 System.out.println();
@@ -176,9 +201,14 @@ class Menu {
             }
 
             System.out.println();
+            System.out.println("==========Salam Hangat dari AntiTuru==========");
             System.out.print("Memulai lagi(y/n) ? ");
             char mulai = s.next().charAt(0);
-            if (mulai != 'y' && mulai != 'Y') {
+            if (mulai == 'y' || mulai == 'Y') {
+                jalan = true;
+            }else{
+                System.out.println("==Terima Kasih sudah menggunakan program ini==");
+                System.out.println("==========Salam Hangat dari AntiTuru==========");
                 jalan = false;
             }
         }
