@@ -100,6 +100,17 @@ public class Matriks{
             I.Matrix[i][i] = 1; //mengganti element dengan angka 1
         return I;//return matriks identitas
     }
+    
+    public static Matriks Hilbert(int N) {
+        Matriks H = new Matriks(N, N + 1);
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                H.Matrix[i][j] = 1.0 / (i + j + 1);
+            }
+        }
+        return H;
+    }
+    
   /* ********** INPUT/OUTPUT MATRIKS ********** */
     // Baca Matriks
     public void BacaMatriks() {
